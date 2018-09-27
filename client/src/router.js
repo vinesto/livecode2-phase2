@@ -11,7 +11,14 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      children: [
+        {
+          path:'/addPost',
+          name:'addPost',
+          component: () => import ('@/components/AddStatus.vue')
+        }
+      ]
     },
     {
       path: '/about',
