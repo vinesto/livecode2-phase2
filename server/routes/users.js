@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var {login, register, getOneUser} =  require('../controllers/users')
+var { login, register, getOneUser, getAllUser, getRandomUser } = require('../controllers/users')
 
 /* GET users listing. */
-router.get('/', getOneUser)
+router.get('/', getAllUser)
+router.get('/:id', getOneUser)
+router.get('/random', getRandomUser)
 
 router.post('/login', login)
 router.post('/register', register)
